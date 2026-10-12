@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ChronoBible - Chronological Bible Reading & Study App</title>
+  <meta name="description" content="Experience the Holy Scriptures in historical chronological order. 365-day reading plan, biblical timeline, ancient maps, and verse-by-verse study tools.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #8B263E;
+      --primary-dark: #681A2D;
+      --accent: #D4AF37;
+      --bg: #FBF8F4;
+      --surface: #FFFFFF;
+      --text-main: #261E1A;
+      --text-muted: #6B5E58;
+      --border: #E8DFD5;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .nav-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-family: 'Cinzel', Georgia, serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-decoration: none;
+    }
+    .logo-icon {
+      width: 36px;
+      height: 36px;
+      background: var(--primary);
+      color: white;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+    }
+    nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-weight: 500;
+      margin-left: 1.5rem;
+      transition: color 0.2s;
+    }
+    nav a:hover {
+      color: var(--primary);
+    }
+    .hero {
+      text-align: center;
+      padding: 4.5rem 1.5rem 3.5rem;
+      background: linear-gradient(180deg, #FBF8F4 0%, #F3ECE2 100%);
+      border-bottom: 1px solid var(--border);
+    }
+    .badge {
+      display: inline-block;
+      background: rgba(139, 38, 62, 0.08);
+      color: var(--primary);
+      padding: 0.35rem 1rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 1.25rem;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+    h1 {
+      font-family: 'Cinzel', Georgia, serif;
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+    .subtitle {
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      max-width: 650px;
+      margin: 0 auto 2rem;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem;
+    }
+    .card {
+      background: var(--surface);
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      padding: 2.5rem;
+      margin-bottom: 2.5rem;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.03);
+    }
+    .card h2 {
+      font-family: 'Cinzel', Georgia, serif;
+      color: var(--primary);
+      font-size: 1.8rem;
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .card h3 {
+      font-size: 1.15rem;
+      color: var(--text-main);
+      margin: 1.5rem 0 0.5rem;
+    }
+    .card p {
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+    .card ul {
+      margin-left: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--text-muted);
+    }
+    .card li {
+      margin-bottom: 0.4rem;
+    }
+    .contact-box {
+      background: #FDF9F5;
+      border: 1px dashed var(--accent);
+      border-radius: 10px;
+      padding: 1.5rem;
+      text-align: center;
+      margin-top: 1.5rem;
+    }
+    .contact-box a {
+      color: var(--primary);
+      font-weight: 600;
+      text-decoration: underline;
+    }
+    footer {
+      text-align: center;
+      padding: 2.5rem 1.5rem;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      border-top: 1px solid var(--border);
+    }
+    @media (max-width: 600px) {
+      h1 { font-size: 2.1rem; }
+      .card { padding: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="nav-container">
+      <a href="#" class="logo">
+        <span class="logo-icon">📖</span>
+        ChronoBible
+      </a>
+      <nav>
+        <a href="#features">Features</a>
+        <a href="#support">Support</a>
+        <a href="#privacy">Privacy</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="badge">Chronological Reading Journey</div>
+    <h1>Read God's Story in Order</h1>
+    <p class="subtitle">Experience the Holy Bible as events actually unfolded in human history. 365-day reading plan, interactive timeline, historical maps, and deep study tools.</p>
+  </section>
+
+  <div class="container">
+    
+    <!-- App Features -->
+    <section id="features" class="card">
+      <h2>✨ Key App Features</h2>
+      <ul>
+        <li><strong>Chronological Reading Plans:</strong> Flexible 1-Year, 6-Month, or 3-Month journeys traversing Genesis to Revelation.</li>
+        <li><strong>Biblical Timeline:</strong> Every major historical event charted from Creation through the Early Church.</li>
+        <li><strong>Ancient Historical Maps:</strong> Follow Abraham's travels, the Exodus route, the Twelve Tribes, and Paul's missionary journeys.</li>
+        <li><strong>Deep Verse Study:</strong> Offline Strong's Hebrew & Greek Concordance, cross-references, and commentaries.</li>
+        <li><strong>Audio Narrator:</strong> Integrated text-to-speech for seamless listening while following along.</li>
+        <li><strong>Scripture Memorization:</strong> Interactive flashcards, prayer journal, and personal reading notes.</li>
+      </ul>
+    </section>
+
+    <!-- Support Section -->
+    <section id="support" class="card">
+      <h2>📬 App Support & Contact</h2>
+      <p>We are dedicated to providing a serene, reliable, and spiritually enriching Bible reading experience. If you have questions, feedback, or need assistance, our team is here to help.</p>
+
+      <h3>Frequently Asked Questions</h3>
+      <p><strong>How do I backup or sync my reading progress?</strong><br>
+      ChronoBible uses private on-device storage and optional Apple iCloud sync. You can create or restore backups at any time in Settings &rarr; Backup & Data.</p>
+
+      <p><strong>Can I use the app offline?</strong><br>
+      Yes! The complete Bible text, Strong's concordance, reading plans, and historical maps are fully available without an active internet connection.</p>
+
+      <p><strong>How do I change my reading pace?</strong><br>
+      Open the Reading Plan tab to toggle between 1-Year (365 days), 6-Month (183 days), or 3-Month (91 days) reading plans.</p>
+
+      <div class="contact-box">
+        <strong>Need direct assistance?</strong><br>
+        Email our support team directly at: <br>
+        <a href="mailto:greatfaitham@gmail.com">greatfaitham@gmail.com</a>
+      </div>
+    </section>
+
+    <!-- Privacy Policy Section -->
+    <section id="privacy" class="card">
+      <h2>🔒 Privacy Policy</h2>
+      <p><em>Last updated: October 2026</em></p>
+      
+      <p>ChronoBible ("we", "our", or "the App") is committed to protecting your privacy. This Privacy Policy explains our data collection and protection practices.</p>
+
+      <h3>1. Information We Collect</h3>
+      <p>ChronoBible operates primarily offline on your device. We do not require account registration, login credentials, or personal identity information to use the App.</p>
+      <p>User-generated data created within the App includes:</p>
+      <ul>
+        <li>Your reading plan progress and completed days</li>
+        <li>Personal reading notes and highlights</li>
+        <li>Memory verses and bookmarks</li>
+        <li>Prayer journal entries</li>
+        <li>App display preferences (font sizes, themes, translations)</li>
+      </ul>
+
+      <h3>2. How Your Data is Stored</h3>
+      <p>All reading progress, notes, bookmarks, and settings are stored locally on your device. If you enable iCloud sync, your backup files are stored encrypted in your personal Apple iCloud Drive account. We do not own, access, or operate external servers storing your personal data.</p>
+
+      <h3>3. Third-Party Services and Analytics</h3>
+      <p>We do not use third-party advertising networks, data brokers, or user-tracking frameworks. We do not sell, rent, or monetize your data under any circumstances.</p>
+
+      <h3>4. User Data Control & Deletion</h3>
+      <p>You maintain complete control over your data. You can export your notes, reset your reading progress, or delete all stored data at any time from within the App's Settings menu. Uninstalling the app completely removes all locally stored data.</p>
+
+      <h3>5. Contact Us</h3>
+      <p>If you have any questions or concerns regarding this Privacy Policy, please contact us at:</p>
+      <p><strong>Email:</strong> <a href="mailto:greatfaitham@gmail.com">greatfaitham@gmail.com</a></p>
+    </section>
+
+  </div>
+
+  <footer>
+    <p>&copy; 2026 ChronoBible App. All rights reserved.</p>
+    <p>Crafted to help believers read God's Word in chronological order.</p>
+  </footer>
+
+</body>
+</html>
